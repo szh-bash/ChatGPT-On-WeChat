@@ -13,8 +13,8 @@ const ChatGPTModelConfig = {
 //   model: "text-davinci-003",
   model: "gpt-3.5-turbo",
   // add your ChatGPT model parameters below
-  temperature: 0.9,
-  max_tokens: 2000,
+//   temperature: 0.9,
+//   max_tokens: 2000,
 };
 
 // message size for a single reply by the bot
@@ -141,7 +141,7 @@ export class ChatGPTBot {
       const response = await this.OpenAI.createCompletion({
         ...ChatGPTModelConfig,
 //         prompt: inputMessage,
-        "messages": [{"role": "user", "content": inputMessage}],
+        messages: [{"role": "user", "content": inputMessage}],
       });
       // use OpenAI API to get ChatGPT reply message
       const chatgptReplyMessage = response?.data?.choices[0]?.text?.trim();
