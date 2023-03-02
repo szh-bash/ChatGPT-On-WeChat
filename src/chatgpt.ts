@@ -140,7 +140,8 @@ export class ChatGPTBot {
       // config OpenAI API request body
       const response = await this.OpenAI.createCompletion({
         ...ChatGPTModelConfig,
-        prompt: inputMessage,
+//         prompt: inputMessage,
+        "messages": [{"role": "user", "content": inputMessage}],
       });
       // use OpenAI API to get ChatGPT reply message
       const chatgptReplyMessage = response?.data?.choices[0]?.text?.trim();
