@@ -138,7 +138,7 @@ export class ChatGPTBot {
     const inputMessage = this.applyContext(text);
     try {
       // config OpenAI API request body
-      const response = await this.OpenAI.createChatCompletion({
+      const response = await this.OpenAI.ChatCompletion.create({
         ...ChatGPTModelConfig,
 //         prompt: inputMessage,
         messages: [{"role": "user", "content": inputMessage}],
